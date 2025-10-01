@@ -1,0 +1,33 @@
+:root { --bg:#0B0B0C; --card:#121214; --muted:#9CA3AF; --border:#1F2937; --acc:#ECEDEE; }
+*{box-sizing:border-box} html,body{margin:0;height:100%;background:var(--bg);color:#e5e7eb;font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,"Helvetica Neue",Arial}
+.bar{position:sticky;top:0;display:flex;gap:12px;align-items:center;justify-content:space-between;padding:12px 16px;background:rgba(18,18,20,.7);backdrop-filter:blur(8px);border-bottom:1px solid var(--border)}
+.bar h1{margin:0;font-size:18px}
+.bar nav a{color:#cbd5e1;text-decoration:none;margin:0 6px;font-size:14px}
+main{padding:16px;max-width:1000px;margin:0 auto}
+.card{background:rgba(18,18,20,.6);border:1px solid var(--border);border-radius:16px;padding:16px;box-shadow:0 10px 30px rgba(0,0,0,.3)}
+.hidden{display:none}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:12px;margin-top:12px}
+.tile{display:block;padding:16px;border:1px solid var(--border);border-radius:14px;text-decoration:none;color:#e5e7eb;background:rgba(255,255,255,.02);text-align:center}
+.hint{margin-top:14px;font-size:12px;color:var(--muted)}
+.row{display:flex;align-items:center;justify-content:space-between;gap:8px;margin:8px 0}
+.col{display:flex;flex-direction:column}
+.center{text-align:center}
+.gap{gap:10px}
+.psm{padding:8px}
+.muted{color:var(--muted)}
+.kpi{font-size:22px;margin-top:4px}
+.box{border:1px solid var(--border);border-radius:12px;padding:20px;background:rgba(255,255,255,.02);min-height:140px}
+.btn{padding:10px 12px;border:1px solid var(--border);border-radius:10px;background:transparent;color:#e5e7eb}
+.btn:hover{background:rgba(255,255,255,.06)}
+.ok{color:#34d399}
+.board{--s:44px;display:grid;grid-template-columns:repeat(8,var(--s));grid-template-rows:repeat(8,var(--s));border:1px solid var(--border);border-radius:12px;overflow:hidden;margin:8px 0}
+.square{display:flex;align-items:center;justify-content:center;font-size:28px;user-select:none;touch-action:manipulation}
+.dark{background:#2b2b2b}.light{background:#3a3a3a}
+.sel{outline:2px solid #818cf8;outline-offset:-2px}
+.hl{box-shadow:inset 0 0 0 3px rgba(56,189,248,.6)}
+.list .row{padding:8px 0;border-bottom:1px dashed var(--border)}
+#plan .blk{border:1px solid var(--border);border-radius:12px;padding:12px;background:rgba(255,255,255,.02)}
+.blk h3{margin:0 0 6px 0;font-size:16px}
+.blk .muted{font-size:13px}
+.blk .act{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:8px}
+.tile:active,.btn:active{transform:translateY(1px)}

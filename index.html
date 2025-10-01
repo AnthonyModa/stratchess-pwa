@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#0B0B0C">
+  <title>StratChess</title>
+  <link rel="manifest" href="manifest.json">
+  <link rel="apple-touch-icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAALAAAACwCAYAAAA2+RrHAAAACXBIWXMAAAsSAAALEgHS3X78AAAAB3RJTUUH5QgSExIodKQKmwAAAB1pVFh0Q29tbWVudAAAAAAAQ3JlYXRlZCB3aXRoIEdJTVBkLmUHAAABbklEQVR42u3RQQ7CMAwF0f7/p2C2n0pQx1z2aQkYzHkqgE0bCwEwTnT9Y3T3Qy2PpXl+W7d5u1n9y2iCwAAAAAAAAAAAAAAALyr3Nqk7b2e1i1f7SAg8lcfbG6N1k8l7m2yXbP4Vq3wWP0v1C7o7J3LxvPzCk7E7V8b9q8Wm8o3j1r7l1k7s4p5Qq2U7p2aQpG0t7Y8cW8w0w5D1V4odQ0qB1Yc1OqB1Yc1OqB1Yc1OqB1Yc1OqB1Yc1OqB1Yc1OqB1Yc1OqB1Yc1OqB1Yc1OqB1Yc1OqB1Yc1OqB1Yc1OqB1Yc1OqB1Yc1OqB1Yc1OqB1Yc1OqB1Yc1OqB1Yc1OtB2f5d2bq1f5s3qk3m8m8k8bN3pWk7u0c8f5+vTqvXo7n6vX4AAAAAAAAAAAAAAAD4A1pH3l1c8k3YAAAAAElFTkSuQmCC">
+  <link rel="stylesheet" href="style.css">
+  <script defer src="https://unpkg.com/chess.js@1.0.0/dist/chess.umd.js"></script>
+  <script defer src="script.js"></script>
+</head>
+<body>
+  <header class="bar">
+    <h1>StratChess</h1>
+    <nav>
+      <a href="#/home">Accueil</a>
+      <a href="#/entrainement">Entraînement</a>
+      <a href="#/play">Jouer</a>
+      <a href="#/drills">Drills</a>
+      <a href="#/strategie">Stratégie</a>
+      <a href="#/rapport">Rapport</a>
+    </nav>
+  </header>
+
+  <main id="app">
+    <section id="view-home" class="card">
+      <h2>Accueil</h2>
+      <p class="muted">Jouer • Drills • Stratégie • Rapport • Entraînement</p>
+      <div class="grid">
+        <a class="tile" href="#/entrainement">Entraînement</a>
+        <a class="tile" href="#/play">Jouer</a>
+        <a class="tile" href="#/drills">Drills</a>
+        <a class="tile" href="#/strategie">Stratégie</a>
+        <a class="tile" href="#/rapport">Rapport</a>
+      </div>
+      <div id="install-hint" class="hint">iOS: Safari → Partager → Ajouter à l’écran d’accueil.</div>
+    </section>
+
+    <section id="view-play" class="card hidden">
+      <div class="row">
+        <h2>Partie</h2>
+        <select id="bot-level">
+          <option value="5">Bot 5</option>
+          <option value="10" selected>Bot 10</option>
+          <option value="15">Bot 15</option>
+        </select>
+      </div>
+      <div id="board" class="board"></div>
+      <div class="row">
+        <div>Évaluation: <span id="eval">—</span></div>
+        <div>Meilleur coup: <span id="bestmove">—</span></div>
+      </div>
+      <div id="gameover" class="ok hidden">Partie terminée. Analyse enregistrée.</div>
+    </section>
+
+    <section id="view-drills" class="card hidden">
+      <h2>Drills</h2>
+      <p class="muted"><span id="drills-left">0</span> restants</p>
+      <div id="drill-box" class="box center muted">Chargement…</div>
+      <div class="row spaced">
+        <button class="btn" data-q="0">0</button><button class="btn" data-q="1">1</button><button class="btn" data-q="2">2</button>
+        <button class="btn" data-q="3">3</button><button class="btn" data-q="4">4</button><button class="btn" data-q="5">5</button>
+      </div>
+      <div id="drill-status" class="muted"></div>
+    </section>
+
+    <section id="view-strategie" class="card hidden">
+      <h2>Stratégie</h2>
+      <div class="grid">
+        <div class="tile"><div class="muted">Profondeur de plan</div><div id="m-planDepth" class="kpi">—</div></div>
+        <div class="tile"><div class="muted">Allocation du temps</div><div id="m-timeAlloc" class="kpi">—</div></div>
+        <div class="tile"><div class="muted">Gestion du risque</div><div id="m-risk" class="kpi">—</div></div>
+        <div class="tile"><div class="muted">Conversion d’avantage</div><div id="m-conv" class="kpi">—</div></div>
+      </div>
+    </section>
+
+    <section id="view-rapport" class="card hidden">
+      <h2>Rapport</h2>
+      <div class="list">
+        <div class="row"><div class="muted">Elo estimé</div><div id="r-elo">—</div></div>
+        <div class="row"><div class="muted">Tendance 30j</div><div id="r-trend">—</div></div>
+        <div class="row"><div class="muted">Rappel J+7</div><div id="r-recall">—</div></div>
+      </div>
+    </section>
+
+    <section id="view-entrainement" class="card hidden">
+      <h2>Entraînement du jour</h2>
+      <div id="plan" class="col gap"></div>
+    </section>
+  </main>
+
+  <footer class="muted center psm">Offline prêt. Données locales.</footer>
+
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/sw.js').catch(()=>{});
+      });
+    }
+  </script>
+</body>
+</html>

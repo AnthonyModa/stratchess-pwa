@@ -1,0 +1,26 @@
+{
+  "name": "StratChess",
+  "short_name": "StratChess",
+  "description": "\u00c9checs, analyse, drills, strat\u00e9gie.",
+  "lang": "fr",
+  "start_url": "/?source=pwa",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#0B0B0C",
+  "theme_color": "#0B0B0C",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAALAAAACwCAYAAAA2+RrHAAAACXBIWXMAAAsSAAALEgHS3X78AAAAB3RJTUUH5QgSExIodKQKmwAAAB1pVFh0Q29tbWVudAAAAAAAQ3JlYXRlZCB3aXRoIEdJTVBkLmUHAAABbklEQVR42u3RQQ7CMAwF0f7/p2C2n0pQx1z2aQkYzHkqgE0bCwEwTnT9Y3T3Qy2PpXl+W7d5u1n9y2iCwAAAAAAAAAAAAAAALyr3Nqk7b2e1i1f7SAg8lcfbG6N1k8l7m2yXbP4Vq3wWP0v1C7o7J3LxvPzCk7E7V8b9q8Wm8o3j1r7l1k7s4p5Qq2U7p2aQpG0t7Y8cW8w0w5D1V4odQ0qB1Yc1OqB1Yc1OqB1Yc1OqB1Yc1OqB1Yc1OqB1Yc1OqB1Yc1OqB1Yc1OqB1Yc1OqB1Yc1OqB1Yc1OqB1Yc1OqB1Yc1OqB1Yc1OqB1Yc1OqB1Yc1OqB1Yc1OqB1Yc1OtB2f5d2bq1f5s3qk3m8m8k8bN3pWk7u0c8f5+vTqvXo7n6vX4AAAAAAAAAAAAAAAD4A1pH3l1c8k3YAAAAAElFTkSuQmCC",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAALAAAACwCAYAAAA2+RrHAAAACXBIWXMAAAsSAAALEgHS3X78AAAAB3RJTUUH5QgSExIodKQKmwAAAB1pVFh0Q29tbWVudAAAAAAAQ3JlYXRlZCB3aXRoIEdJTVBkLmUHAAABbklEQVR42u3RQQ7CMAwF0f7/p2C2n0pQx1z2aQkYzHkqgE0bCwEwTnT9Y3T3Qy2PpXl+W7d5u1n9y2iCwAAAAAAAAAAAAAAALyr3Nqk7b2e1i1f7SAg8lcfbG6N1k8l7m2yXbP4Vq3wWP0v1C7o7J3LxvPzCk7E7V8b9q8Wm8o3j1r7l1k7s4p5Qq2U7p2aQpG0t7Y8cW8w0w5D1V4odQ0qB1Yc1OqB1Yc1OqB1Yc1OqB1Yc1OqB1Yc1OqB1Yc1OqB1Yc1OqB1Yc1OqB1Yc1OqB1Yc1OqB1Yc1OqB1Yc1OqB1Yc1OqB1Yc1OqB1Yc1OqB1Yc1OqB1Yc1OqB1Yc1OtB2f5d2bq1f5s3qk3m8m8k8bN3pWk7u0c8f5+vTqvXo7n6vX4AAAAAAAAAAAAAAAD4A1pH3l1c8k3YAAAAAElFTkSuQmCC",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}
