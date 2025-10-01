@@ -10,6 +10,13 @@ const S = {
 };
 
 const store = {
+  function getChessCtor(){
+  // chess.js UMD peut exposer Chess ou { Chess }
+  if (window.Chess && typeof window.Chess === 'function') return window.Chess;
+  if (window.Chess && typeof window.Chess.Chess === 'function') return window.Chess.Chess;
+  if (window.chess && typeof window.chess.Chess === 'function') return window.chess.Chess;
+  throw new Error('chess.js introuvable');
+}
   get(k, d=null){ try { return JSON.parse(localStorage.getItem(k)) ?? d; } catch { return d; } },
   set(k, v){ localStorage.setItem(k, JSON.stringify(v)); },
 };
@@ -50,7 +57,13 @@ function init(){
   if (!store.get('games')) store.set('games', []);
   if (!store.get('strategy')) store.set('strategy', {});
   if (!store.get('daily_plan')) store.set('daily_plan', {});
-  S.game = new window.Chess();
+  try {
+  const ChessCtor = getChessCtor();
+  S.game = new ChessCtor();
+} catch (e) {
+  console.error(e);
+  S.game = null;
+}
 }
 
 // --- Play view ---
